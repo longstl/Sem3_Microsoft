@@ -101,12 +101,12 @@
                                 <ImageBrush ImageSource="Assets/avatar2.jpg"/>
                             </Ellipse.Fill>
                         </Ellipse>
-                        <Border BorderBrush="Black" BorderThickness="1" CornerRadius="15" Width="700" Height="30" Background="#F2F3F5">
+                        <Border BorderBrush="#a8acb0" BorderThickness="1" CornerRadius="15" Width="500" Height="30" Background="#F2F3F5">
                             <StackPanel Orientation="Horizontal">
                                 <StackPanel Orientation="Vertical">
                                     <StackPanel Orientation="Horizontal">
                                         <HyperlinkButton>
-                                            <TextBlock Text="JackSon" Margin="20,0,0,0" Foreground="#4080ff"/>
+                                            <TextBlock Text="JackSon" FontWeight="Bold" Margin="20,-5,0,0" Foreground="#4080ff"/>
                                         </HyperlinkButton>
                                         <TextBlock Text="Đi Xem Phim Của Tôi Đi Ông Ơi. Tôi Có Vé Mời Riêng Cho Ông." Foreground="Black" Margin="20,5,10,10"/>
                                     </StackPanel>
@@ -121,7 +121,7 @@
                         <HyperlinkButton>
                             <TextBlock Text="Reply" Margin="10,-30,0,0" FontWeight="Normal" FontSize="15" Foreground="#4080FF"/>
                         </HyperlinkButton>
-                        <TextBlock Text="24hr" Margin="10, -23, 0, 0" Foreground="#A8ACB0"/>
+                        <TextBlock Text="1d" Margin="10, -23, 0, 0" Foreground="#A8ACB0"/>
                     </StackPanel>
 
                     <StackPanel Orientation="Vertical">
@@ -131,12 +131,12 @@
                                     <ImageBrush ImageSource="Assets/avatar3.jpg"/>
                                 </Ellipse.Fill>
                             </Ellipse>
-                            <Border BorderBrush="Black" BorderThickness="1" CornerRadius="15" Width="700" Height="30" Background="#F2F3F5">
+                            <Border BorderBrush="#a8acb0" BorderThickness="1" CornerRadius="15" Width="260" Height="30" Background="#F2F3F5">
                                 <StackPanel Orientation="Horizontal">
                                     <StackPanel Orientation="Vertical">
                                         <StackPanel Orientation="Horizontal">
                                             <HyperlinkButton>
-                                                <TextBlock Text="Valak" Margin="20,0,0,0" Foreground="#4080ff"/>
+                                                <TextBlock Text="Valak" FontWeight="Bold" Margin="20,-5,0,0" Foreground="#4080ff"/>
                                             </HyperlinkButton>
                                             <TextBlock Text="Đi Xem Phim Của Valak Đê." Foreground="Black" Margin="20,5,10,10"/>
                                         </StackPanel>
@@ -152,7 +152,7 @@
                         <HyperlinkButton>
                             <TextBlock Text="Reply" Margin="10,-30,0,0" FontWeight="Normal" FontSize="15" Foreground="#4080FF"/>
                         </HyperlinkButton>
-                        <TextBlock Text="24hr" Margin="10, -23, 0, 0" Foreground="#A8ACB0"/>
+                        <TextBlock Text="4h" Margin="10, -23, 0, 0" Foreground="#A8ACB0"/>
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal">
@@ -161,7 +161,7 @@
                                 <ImageBrush ImageSource="Assets/avatar.jpg"/>
                             </Ellipse.Fill>
                         </Ellipse>
-                        <Border BorderBrush="Black" BorderThickness="1" CornerRadius="15" Width="700" Height="60" Background="#F2F3F5">
+                        <Border BorderBrush="#a8acb0" BorderThickness="1" CornerRadius="15" Width="700" Height="60" Background="#F2F3F5">
                             <StackPanel Margin="5" Orientation="Horizontal">
                                 <TextBox Margin="3 0 400 0" Background="#F2F3F5" PlaceholderForeground="Black" PlaceholderText="Write a Comment..."/>
                                 <StackPanel Orientation="Horizontal">
