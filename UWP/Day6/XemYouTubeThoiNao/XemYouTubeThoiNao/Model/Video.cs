@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace XemYouTubeThoiNao.Model
 {
-    class Video
+    public class Video
     {
         public string Id { get; set; }
 

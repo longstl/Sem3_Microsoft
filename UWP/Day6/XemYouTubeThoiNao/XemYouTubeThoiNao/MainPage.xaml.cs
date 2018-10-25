@@ -1,22 +1,11 @@
 ﻿using Google.Apis.Services;
 using Google.Apis.YouTube.v3;
-using Google.Apis.YouTube.v3.Data;
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Net.NetworkInformation;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.Popups;
-using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
+using XemYouTubeThoiNao.Model;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -49,7 +38,7 @@ namespace XemYouTubeThoiNao
                 if (NetworkInterface.GetIsNetworkAvailable())
                 {
                     var Request = youTubeService.Search.List("snippet");
-                    Request.ChannelId = "UCWe2_PAssRwmxNrawgyJgMA";
+                    Request.ChannelId = "UCRMXHQ2rJ9_0CHS7mhL7erg";
                     Request.MaxResults = 40;
                     Request.Type = "video";
                     Request.Order = SearchResource.ListRequest.OrderEnum.Date;
