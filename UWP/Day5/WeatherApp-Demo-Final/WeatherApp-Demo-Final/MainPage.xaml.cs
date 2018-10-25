@@ -31,7 +31,7 @@ namespace WeatherApp_Demo_Final
 
                 RootObject myWeather = await APIManager.GetWeather(lat, lon);
                 Debug.WriteLine(myWeather);
-                string icon = string.Format("ms-appx://Assets/Weather/{0}.png", myWeather.list[0].weather[0].icon);
+                string icon = string.Format("ms-appx:///Assets/Weather/{0}.png", myWeather.list[0].weather[0].icon);
                 ResultImage.Source = new BitmapImage(new Uri(icon, UriKind.Absolute));
                 TempTextBlock.Text = myWeather.list[0].main.temp.ToString();
                 DescriptionTextBlock.Text = myWeather.list[0].weather[0].description;
