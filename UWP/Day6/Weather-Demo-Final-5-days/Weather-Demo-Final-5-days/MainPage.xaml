@@ -8,24 +8,39 @@
     mc:Ignorable="d"
     Loaded="Page_Loaded"
     xmlns:m="using:Weather_Demo_Final_5_days.entity"
-
     RequestedTheme="Light">
 
-    <Page.Resources>
-        <m:OpenWeatherMap x:Key="RootObject"/>
-        <DataTemplate x:Name="WeatherTemplate">
-            <StackPanel DataContext="{Binding Source={StaticResource RootObject}}">
-                <Image Width="80" Height="80" Source="{Binding icon, Mode=OneWay}" HorizontalAlignment="Center"/>
-                <TextBlock HorizontalAlignment="Center" Text="{Binding temp, Mode=OneWay}"/>
-                <TextBlock Text="{Binding temp_min, Mode=OneWay}" HorizontalAlignment="Center"/>
-                <TextBlock Text="{Binding temp_max, Mode=OneWay}" HorizontalAlignment="Center"/>
-                <TextBlock Text="{Binding temp_max, Mode=OneWay}" HorizontalAlignment="Center"/>
-                <TextBlock Text="{Binding name, Mode=OneWay}" HorizontalAlignment="Center"/>
-            </StackPanel>
-        </DataTemplate>
-    </Page.Resources>
-
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <ListView x:Name="MyListView" ItemTemplate="{StaticResource WeatherTemplate}" IsItemClickEnabled="False"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="CityTextBlock" Grid.Row="0" HorizontalAlignment="Center" FontSize="60"/>
+        <GridView ItemsSource="{Binding collection}" x:Name="ForeCastGridView" Grid.Row="1">
+            <GridView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel x:Name="MyStackPanel">
+                        <TextBlock x:Name="DateTextBlock" Text="{Binding dt_txt}"/>
+                        <Image x:Name="ImgIcon" Source="{Binding Path=weather[0].icon}" Width="200" Height="200" HorizontalAlignment="Center"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock x:Name="TempTextBlock" Text="{Binding main.temp}"/>
+                            <TextBlock Text=" &#186;"/>
+                            <TextBlock Text="C"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock x:Name="TempMinTextBlock" Text="{Binding main.temp_min}"/>
+                            <TextBlock Text=" &#186;"/>
+                            <TextBlock Text="C"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock x:Name="TempMaxTextBlock" Text="{Binding main.temp_max}"/>
+                            <TextBlock Text=" &#186;"/>
+                            <TextBlock Text="C"/>
+                        </StackPanel>
+                        <TextBlock x:Name="DescriptionTextBlock" Text="{Binding weather[0].description}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>
     </Grid>
 </Page>

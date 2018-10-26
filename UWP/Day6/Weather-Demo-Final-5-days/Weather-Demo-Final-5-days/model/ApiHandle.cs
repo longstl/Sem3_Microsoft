@@ -18,7 +18,7 @@ namespace Weather_Demo_Final_5_days.model
 
         public static async Task<OpenWeatherMap.RootObject> GetWeather(double lat, double lon)
         {
-            var getWeatherUrl = string.Format("https://api.openweathermap.org/data/2.5/forecast?lat={0}&lon={1}&appid={2}&unit={3}", lat, lon, ApiKey, UnitParam);
+            var getWeatherUrl = string.Format("https://api.openweathermap.org/data/2.5/forecast?lat={0}&lon={1}&appid={2}&units={3}", lat, lon, ApiKey, UnitParam);
             var http = new HttpClient();
             var response = await http.GetAsync(getWeatherUrl);
             var result = await response.Content.ReadAsStringAsync();

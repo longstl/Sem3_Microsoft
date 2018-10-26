@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 using Newtonsoft.Json;
 using Weather_Demo_Final_5_days.entity;
@@ -29,13 +30,15 @@ namespace Weather_Demo_Final_5_days
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        ObservableCollection<OpenWeatherMap.List> list;
-
-
+        
         public MainPage()
         {
             this.InitializeComponent();
+            collection = new ObservableCollection<OpenWeatherMap.List>();
+            this.DataContext = this;
         }
+
+        public ObservableCollection<OpenWeatherMap.List> collection { get; set; }
 
         private async void Page_Loaded(object sender, RoutedEventArgs e)
         {
@@ -53,16 +56,22 @@ namespace Weather_Demo_Final_5_days
                     var lon = postion.Coordinate.Longitude;
 #pragma warning restore CS0618 // Type or member is obsolete
 
-                    OpenWeatherMap.RootObject root = await ApiHandle.GetWeather(lat, lon);
-                    list = root.list;
-                    for (int i = 0; i < list.Count; i++)
+                    OpenWeatherMap.RootObject forecast = await ApiHandle.GetWeather(lat, lon);
+                    CityTextBlock.Text = forecast.city.name;
+                    
+                    for (int i = 0; i < forecast.list.Count; i++)
                     {
-                        for (int j = 0; j < list[i].weather.Count; j++)
+                        //collection.Add(forecast.list[i]);
+                        for (int j = 0; j < forecast.list[i].weather.Count; j++)
                         {
-                            if (MyListView.Items != null) MyListView.Items.Add(list[i].weather[j]);
+                            string icon = string.Format("ms-appx:///Assets/Weather/{0}.png", forecast.list[i].weather[j].icon);
+                            var listReplace = forecast.list[i].weather[j];
+                            listReplace.icon = icon;
                         }
+                        collection.Add(forecast.list[i]);
                     }
 
+                    ForeCastGridView.ItemsSource = collection;
                 }
             }
             catch (Exception exception)
@@ -71,4 +80,5 @@ namespace Weather_Demo_Final_5_days
             }
         }
     }
+
 }

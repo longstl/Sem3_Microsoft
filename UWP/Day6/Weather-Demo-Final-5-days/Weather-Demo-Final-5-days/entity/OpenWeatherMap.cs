@@ -11,7 +11,7 @@ using Weather_Demo_Final_5_days.Annotations;
 
 namespace Weather_Demo_Final_5_days.entity
 {
-    public class OpenWeatherMap : INotifyPropertyChanged
+    public class OpenWeatherMap
     {
         [DataContract]
         public class Main
@@ -131,14 +131,6 @@ namespace Weather_Demo_Final_5_days.entity
             public ObservableCollection<List> list { get; set; }
             [DataMember]
             public City city { get; set; }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        [NotifyPropertyChangedInvocator]
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
