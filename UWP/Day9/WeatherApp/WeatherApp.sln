@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2046
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherApp", "WeatherApp\WeatherApp.csproj", "{FEC30338-C4FC-4DD3-82B4-6BB200AC9FC2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM = Debug|ARM
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|ARM = Release|ARM
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FEC30338-C4FC-4DD3-82B4-6BB200AC9FC2}.Debug|ARM.ActiveCfg = Debug|ARM
+		{FEC30338-C4FC-4DD3-82B4-6BB200AC9FC2}.Debug|ARM.Build.0 = Debug|ARM
+		{FEC30338-C4FC-4DD3-82B4-6BB200AC9FC2}.Debug|ARM.Deploy.0 = Debug|ARM
+		{FEC30338-C4FC-4DD3-82B4-6BB200AC9FC2}.Debug|x64.ActiveCfg = Debug|x64
+		{FEC30338-C4FC-4DD3-82B4-6BB200AC9FC2}.Debug|x64.Build.0 = Debug|x64
+		{FEC30338-C4FC-4DD3-82B4-6BB200AC9FC2}.Debug|x64.Deploy.0 = Debug|x64
+		{FEC30338-C4FC-4DD3-82B4-6BB200AC9FC2}.Debug|x86.ActiveCfg = Debug|x86
+		{FEC30338-C4FC-4DD3-82B4-6BB200AC9FC2}.Debug|x86.Build.0 = Debug|x86
+		{FEC30338-C4FC-4DD3-82B4-6BB200AC9FC2}.Debug|x86.Deploy.0 = Debug|x86
+		{FEC30338-C4FC-4DD3-82B4-6BB200AC9FC2}.Release|ARM.ActiveCfg = Release|ARM
+		{FEC30338-C4FC-4DD3-82B4-6BB200AC9FC2}.Release|ARM.Build.0 = Release|ARM
+		{FEC30338-C4FC-4DD3-82B4-6BB200AC9FC2}.Release|ARM.Deploy.0 = Release|ARM
+		{FEC30338-C4FC-4DD3-82B4-6BB200AC9FC2}.Release|x64.ActiveCfg = Release|x64
+		{FEC30338-C4FC-4DD3-82B4-6BB200AC9FC2}.Release|x64.Build.0 = Release|x64
+		{FEC30338-C4FC-4DD3-82B4-6BB200AC9FC2}.Release|x64.Deploy.0 = Release|x64
+		{FEC30338-C4FC-4DD3-82B4-6BB200AC9FC2}.Release|x86.ActiveCfg = Release|x86
+		{FEC30338-C4FC-4DD3-82B4-6BB200AC9FC2}.Release|x86.Build.0 = Release|x86
+		{FEC30338-C4FC-4DD3-82B4-6BB200AC9FC2}.Release|x86.Deploy.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {81EDC4BB-142B-44B1-93AA-56E15DCAE75D}
+	EndGlobalSection
+EndGlobal
