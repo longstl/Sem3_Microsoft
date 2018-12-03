@@ -56,14 +56,14 @@
                 @Html.DisplayFor(modelItem => item.description)
             </td>
             <td>
-                <select class="form-control" id="selectedMaterialBox" style="height: 50px;">
+                <select class="form-control" id="selectedMaterialBox-@Html.DisplayFor(modelItem => item.id)" style="height: 50px;">
                     <option value="1">Wood</option>
                     <option value="2">Paper</option>
                     <option value="3">Plastic</option>
                 </select>
             </td>
             <td>
-                <select class="form-control" id="selectedSizeBox" style="height: 50px;">
+                <select class="form-control" id="selectedSizeBox-@Html.DisplayFor(modelItem => item.id)" style="height: 50px;">
                     <option value="1">800 x 600</option>
                     <option value="2">1280 x 720</option>
                     <option value="3">1650 x 1050</option>
@@ -72,7 +72,9 @@
             </td>
             <td>
                 <form method="post">
-                    <input class="btn-default btn" onclick="location.href = '@Url.Action("OrderNow", "ShoppingCart")?id=' + @item.id + '&MaterialId=' + $('#selectedMaterialBox').val() + '&SizeId=' + $('#selectedSizeBox').val()" value="Add to Cart" />
+                    <input class="btn-default btn" 
+                           onclick="location.href = '@Url.Action("OrderNow", "ShoppingCart")?id=' + @item.id + '&MaterialId=' + $('#selectedMaterialBox-@Html.DisplayFor(modelItem => item.id)').val() + '&SizeId=' + $('#selectedSizeBox-@Html.DisplayFor(modelItem => item.id)').val()" 
+                           value="Add to Cart" />
                 </form>
             </td>
         </tr>
