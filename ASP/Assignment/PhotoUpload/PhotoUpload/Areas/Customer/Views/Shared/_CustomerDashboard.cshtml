@@ -1,0 +1,182 @@
+﻿<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Customer Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="/Assets/Dashboard/images/icon/favicon.ico">
+    <link rel="stylesheet" href="/Assets/Dashboard/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/Assets/Dashboard/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/Assets/Dashboard/css/themify-icons.css">
+    <link rel="stylesheet" href="/Assets/Dashboard/css/metisMenu.css">
+    <link rel="stylesheet" href="/Assets/Dashboard/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/Assets/Dashboard/css/slicknav.min.css">
+    <!-- amchart css -->
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+    <!-- others css -->
+    <link rel="stylesheet" href="/Assets/Dashboard/css/typography.css">
+    <link rel="stylesheet" href="/Assets/Dashboard/css/default-css.css">
+    <link rel="stylesheet" href="/Assets/Dashboard/css/styles.css">
+    <link rel="stylesheet" href="/Assets/Dashboard/css/responsive.css">
+    @RenderSection("StyleSheets")
+    <!-- modernizr css -->
+    <script src="/Assets/Dashboard/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <!-- preloader area start -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+    <!-- preloader area end -->
+    <!-- page container area start -->
+    <div class="page-container">
+        <!-- sidebar menu area start -->
+        <div class="sidebar-menu">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <a href="@Url.Action("Index","Login", new {Area = "Customer"})"><img src="/Assets/Dashboard/images/icon/logo.png" alt="logo"></a>
+                </div>
+            </div>
+            <div class="main-menu">
+                <div class="menu-inner">
+                    <nav>
+                        <ul class="metismenu" id="menu">
+                            <li>
+                                <a href="@Url.Action("Index","Login", new {Area = "Customer"})" aria-expanded="true"><i class="ti-pie-chart active"></i><span>Upload Image</span></a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("Index","Image", new {Area = "Customer"})" aria-expanded="true"><i class="ti-palette"></i><span>Library</span></a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("OrderNow","ShoppingCart", new {Area = "Customer"})" aria-expanded="true"><i class="ti-palette"></i><span>Cart</span></a>
+                            </li>
+                            <li><a href="javascript:void(0)"><i class="ti-map-alt"></i> <span>Order History</span></a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- sidebar menu area end -->
+        <!-- main content area start -->
+        <div class="main-content">
+            <!-- header area start -->
+            <div class="header-area">
+                <div class="row align-items-center">
+                    <!-- nav and search button -->
+                    <div class="col-md-6 col-sm-8 clearfix">
+                        <div class="nav-btn pull-left">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="search-box pull-left">
+                            <form action="#">
+                                <input type="text" name="search" placeholder="Search..." required>
+                                <i class="ti-search"></i>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- page title area start -->
+            <div class="page-title-area">
+                <div class="row align-items-center">
+
+                    @RenderSection("navheader")
+                    <div class="col-sm-6 clearfix">
+                        <div class="user-profile pull-right">
+                            <img class="avatar user-thumb" src="/Assets/Dashboard/images/author/avatar.png" alt="avatar">
+                            <h4 class="user-name dropdown-toggle" data-toggle="dropdown">@HttpContext.Current.User.Identity.Name <i class="fa fa-angle-down"></i></h4>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Message</a>
+                                <a class="dropdown-item" href="#">Settings</a>
+                                @if (Request.IsAuthenticated)
+                                {
+                                    using (Html.BeginForm("Logout", "Login", FormMethod.Post, new { id = "logoutForm" }))
+                                    {
+                                        <a class="dropdown-item" href="javascript:document.getElementById('logoutForm').submit()">Log Out</a>
+                                    }
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- page title area end -->
+            <div class="main-content-inner">
+                <div class="row">
+                    @RenderBody()
+                </div>
+            </div>
+            <!-- testimonial area end -->
+        </div>
+    </div>
+    <!-- main content area end -->
+    <!-- footer area start-->
+    <footer>
+        <div class="footer-area">
+            <p>
+                © Copyright
+                <script>document.write(new Date().getFullYear());</script>. All right reserved. Template by <a href="https://colorlib.com/wp/">Colorlib</a>.
+            </p>
+        </div>
+    </footer>
+    <!-- footer area end-->
+    <!-- offset area end -->
+    <!-- jquery latest version -->
+    <script src="/Assets/Dashboard/js/vendor/jquery-2.2.4.min.js"></script>
+    <!-- bootstrap 4 js -->
+    <script src="/Assets/Dashboard/js/popper.min.js"></script>
+    <script src="/Assets/Dashboard/js/bootstrap.min.js"></script>
+    <script src="/Assets/Dashboard/js/owl.carousel.min.js"></script>
+    <script src="/Assets/Dashboard/js/metisMenu.min.js"></script>
+    <script src="/Assets/Dashboard/js/jquery.slimscroll.min.js"></script>
+    <script src="/Assets/Dashboard/js/jquery.slicknav.min.js"></script>
+    <!-- start chart js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <!-- start highcharts js -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <!-- start amcharts -->
+    <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+    <script src="https://www.amcharts.com/lib/3/ammap.js"></script>
+    <script src="https://www.amcharts.com/lib/3/maps/js/worldLow.js"></script>
+    <script src="https://www.amcharts.com/lib/3/serial.js"></script>
+    <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+    <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+    <!-- all line chart activation -->
+    <script src="/Assets/Dashboard/js/line-chart.js"></script>
+    <!-- all pie chart -->
+    <script src="/Assets/Dashboard/js/pie-chart.js"></script>
+    <!-- all bar chart -->
+    <script src="/Assets/Dashboard/js/bar-chart.js"></script>
+    <!-- all map chart -->
+    <script src="/Assets/Dashboard/js/maps.js"></script>
+    <!-- others plugins -->
+    <script src="/Assets/Dashboard/js/plugins.js"></script>
+    <script src="/Assets/Dashboard/js/scripts.js"></script>
+
+    <!-- Get Current User-->
+    <script>
+    $(document).ready(function() {
+        $.ajax({
+            url: '/api/customer/getInfo?email=' + '@HttpContext.Current.User.Identity.Name',
+            method: 'GET',
+            success: function(resp) {
+                return resp;
+            },
+            error: function() {
+                return 'Can not connect to API';
+            }
+        });
+    });
+    </script>
+    @RenderSection("Scripts")
+</body>
+</html>

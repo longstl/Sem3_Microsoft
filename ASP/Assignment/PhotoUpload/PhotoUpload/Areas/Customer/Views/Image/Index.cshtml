@@ -1,0 +1,123 @@
+﻿@model IEnumerable<PhotoUpload.Image>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Customer/Views/Shared/_CustomerDashboard.cshtml";
+}
+
+@section StyleSheets
+{}
+
+@section navheader{
+    <div class="col-sm-6">
+        <div class="breadcrumbs-area clearfix">
+            <h4 class="page-title pull-left">Dashboard</h4>
+            <ul class="breadcrumbs pull-left">
+                <li><a href="index.html">Home</a></li>
+                <li><span>Library</span></li>
+            </ul>
+        </div>
+    </div>
+}
+
+@if (ViewBag.Message != "")
+{
+    <div class="text-danger">@ViewBag.Message</div>
+}
+
+<table class="table table-dark table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.url)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.description)
+        </th>
+        <th>Size</th>
+        <th>Material</th>
+        <th>
+            Action
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <img src="@Html.DisplayFor(modelItem => item.url)" style="width: 300px; height: 200px" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.description)
+            </td>
+            <td>
+                <select class="form-control" id="selectedMaterialBox" style="height: 50px;">
+                    <option value="1">Wood</option>
+                    <option value="2">Paper</option>
+                    <option value="3">Plastic</option>
+                </select>
+            </td>
+            <td>
+                <select class="form-control" id="selectedSizeBox" style="height: 50px;">
+                    <option value="1">800 x 600</option>
+                    <option value="2">1280 x 720</option>
+                    <option value="3">1650 x 1050</option>
+                    <option value="4">1920 x 1080</option>
+                </select>
+            </td>
+            <td>
+                <form method="post">
+                    <input class="btn-default btn" onclick="location.href = '@Url.Action("OrderNow", "ShoppingCart")?id=' + @item.id + '&MaterialId=' + $('#selectedMaterialBox').val() + '&SizeId=' + $('#selectedSizeBox').val()" value="Add to Cart" />
+                </form>
+            </td>
+        </tr>
+    }
+</table>
+
+@section Scripts
+{
+    @*<script>
+            var value1 = $("#selectedMaterialBox").val();
+            var value2 = $("#selectedSizeBox").val();
+            $(document).ready(function() {
+                $("#selectedMaterialBox").change(function() {
+                    value1 = $(this).val();
+                }), $("#selectedSizeBox").change(function() {
+                    value2 = $(this).val();
+                }), $('.btnUpdate').click(function() {
+                    var id = $(this).attr('href');
+                    alert(id);
+                    console.log(value1 + "   " + value2);
+                    $.ajax({
+                        url: '/api/customer/getPrice?materialId=' + value1 + '&sizeId=' + value2,
+                        method: 'GET',
+                        'data': {
+                            '_token': $('meta[name="_token"]').attr('content')
+                        },
+                        success: function(resp) {
+                            var data = JSON.stringify(resp);
+                            alert(data);
+                            $.ajax({
+                                url: '/customer/shoppingcart/ordernow' + '?id=' + id + '&unitPrice=' + JSON.parse(resp).price,
+                                method: 'POST'
+                                'data': {
+                                    '_token': $('meta[name="_token"]').attr('content')
+                                },
+                                success: function(response) {
+
+                                }
+                            });
+                        },
+                        error: function() {
+                            return 'Can not connect to API';
+                        }
+                    });
+                });
+            });
+        </script>*@
+}

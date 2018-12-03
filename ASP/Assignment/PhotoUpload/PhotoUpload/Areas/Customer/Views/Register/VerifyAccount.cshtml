@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "VerifyAccount";
+    Layout = "~/Areas/Customer/Views/Shared/_CustomerLayout.cshtml";
+}
+
+<!-- Page top section start -->
+<div class="page-top-area set-bg" data-setbg="/Assets/Home/img/headers-bg/1.jpg">
+    <div class="breadcrumb-area">
+        <a href="@Url.Action("Index","Home", new {Area = ""})">Home</a> / <span>Verify Account</span>
+    </div>
+</div>
+<!-- Page top section end -->
+
+@if (ViewBag.Status != null && Convert.ToBoolean(ViewBag.Status))
+{
+<div class="alert alert-success">
+    <strong>Success!</strong> Your Account has been activated successfully. Click here to @Html.ActionLink("Login", "Login", "Login", new { Area = "Customer"},null)
+</div>
+}
+else
+{
+    <div class="alert alert-danger">
+        <strong>Error</strong> @ViewBag.Message
+    </div>
+}

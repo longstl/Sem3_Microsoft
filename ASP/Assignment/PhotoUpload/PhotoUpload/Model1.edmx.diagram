@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9a2c2c3e596d4f15b19ea54c9a8ba203" Name="Diagram1">
+        <EntityTypeShape EntityType="AssignmentModel.Admin" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssignmentModel.Customer" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssignmentModel.Employee" Width="1.5" PointX="0.75" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssignmentModel.Image" Width="1.5" PointX="3" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssignmentModel.Material" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssignmentModel.Order" Width="1.5" PointX="3" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssignmentModel.Order_Detail" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssignmentModel.Payment_Method" Width="1.5" PointX="1.5" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssignmentModel.Price" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssignmentModel.Size" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssignmentModel.sysdiagram" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <AssociationConnector Association="AssignmentModel.Customer_Price_Method" ManuallyRouted="false" />
+        <AssociationConnector Association="AssignmentModel.Image_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="AssignmentModel.Order_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="AssignmentModel.Order_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="AssignmentModel.Order_Detail_Image" ManuallyRouted="false" />
+        <AssociationConnector Association="AssignmentModel.Price_Material" ManuallyRouted="false" />
+        <AssociationConnector Association="AssignmentModel.Order_Detail_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="AssignmentModel.Order_Detail_Price" ManuallyRouted="false" />
+        <AssociationConnector Association="AssignmentModel.Price_Size" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

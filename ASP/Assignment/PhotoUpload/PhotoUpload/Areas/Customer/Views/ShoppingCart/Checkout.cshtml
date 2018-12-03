@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "Checkout";
+    Layout = "~/Areas/Customer/Views/Shared/_CustomerDashboard.cshtml";
+}
+
+@section StyleSheets{
+
+}
+
+@section navheader
+{}
+
+<div class="alert alert-success">
+    <strong>Success!</strong> Your Order has been received.
+</div>
+
+@section Scripts
+{
+    // auto reload 3s
+    var timer = setTimeout(function() {
+    window.location='http://localhost:51541'
+    }, 3000);
+}
+
