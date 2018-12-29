@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d0b0c936cdc84c619f9bfdf9d8cb4786" Name="Diagram1">
+        <EntityTypeShape EntityType="Assignment2_ServicesModel.Admin" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Assignment2_ServicesModel.Comment" Width="1.5" PointX="7.5" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Assignment2_ServicesModel.Image" Width="1.5" PointX="7.5" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Assignment2_ServicesModel.Post" Width="1.5" PointX="5.25" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Assignment2_ServicesModel.Role" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Assignment2_ServicesModel.Sub_Comment" Width="1.5" PointX="9.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="Assignment2_ServicesModel.Tag" Width="1.5" PointX="5.25" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="Assignment2_ServicesModel.Tag_Post" Width="1.5" PointX="7.5" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Assignment2_ServicesModel.Traveler" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Assignment2_ServicesModel.Vote" Width="1.5" PointX="10.5" PointY="7.5" IsExpanded="true" />
+        <AssociationConnector Association="Assignment2_ServicesModel.Comment_Post" ManuallyRouted="false" />
+        <AssociationConnector Association="Assignment2_ServicesModel.Comment_Traveler" ManuallyRouted="false" />
+        <AssociationConnector Association="Assignment2_ServicesModel.Sub_Comment_Comment" ManuallyRouted="false" />
+        <AssociationConnector Association="Assignment2_ServicesModel.Image_Post" ManuallyRouted="false" />
+        <AssociationConnector Association="Assignment2_ServicesModel.Post_Traveler" ManuallyRouted="false" />
+        <AssociationConnector Association="Assignment2_ServicesModel.Tag_Post_Post" ManuallyRouted="false" />
+        <AssociationConnector Association="Assignment2_ServicesModel.Vote_Post" ManuallyRouted="false" />
+        <AssociationConnector Association="Assignment2_ServicesModel.Traveler_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="Assignment2_ServicesModel.Sub_Comment_Traveler" ManuallyRouted="false" />
+        <AssociationConnector Association="Assignment2_ServicesModel.Tag_Post_Tag" ManuallyRouted="false" />
+        <AssociationConnector Association="Assignment2_ServicesModel.Vote_Traveler" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
